@@ -12,8 +12,12 @@ def download_cif(pdb_id, save_dir="pdb_mmCIF"):
 def download_multiple_cifs(pdb_ids, save_dir="pdb_mmCIF"):
     for pdb_id in pdb_ids:
         try:
-            download_cif(pdb_id, save_dir)
-            print(f"Downloaded {pdb_id}")
+            cif_path = f"{save_dir}/{pdb_id.lower()}.cif"
+            if os.path.exists(cif_path):
+                print(f"{pdb_id} already exists, skipping.")
+            else:
+                download_cif(pdb_id, save_dir)
+                print(f"Downloaded {pdb_id}")
         except Exception as e:
             print(f"Failed to download {pdb_id}: {e}")
 
