@@ -34,7 +34,7 @@ def fetch_fasta(pdb_id):
     except:
         return ""
 
-def build_dataset(mmcif_dir, out_csv="clean_crystallization_dataset.csv", max_files=1000):
+def build_dataset(mmcif_dir, out_csv="crystallization_dataset.csv", max_files=1000):
     all_data = []
     processed = 0
     for root, dirs, files in os.walk(mmcif_dir):
