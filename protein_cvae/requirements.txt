@@ -7,3 +7,4 @@ biopython
 requests
 joblib
 gemmi
+fair-esm
