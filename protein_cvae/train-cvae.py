@@ -16,7 +16,7 @@ df = df.dropna(subset=["sequence", "resolution", "details", "pH", "temperature"]
 
 # One-hot encode resolution class
 encoder = OneHotEncoder(sparse_output=False)
-res_class_onehot = encoder.fit_transform(df[["resolution_class"]])
+res_class_onehot = encoder.fit_transform(df[["resolution"]])
 
 # TF-IDF vector for condition details
 tfidf = TfidfVectorizer(max_features=50)
