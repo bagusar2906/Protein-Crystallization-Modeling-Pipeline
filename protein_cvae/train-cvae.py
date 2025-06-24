@@ -12,7 +12,7 @@ import numpy as np
 
 # Load dataset
 df = pd.read_csv("crystallization_dataset.csv")
-df = df.dropna(subset=["sequence", "resolution_class", "details", "pH", "temperature"])
+df = df.dropna(subset=["sequence", "resolution", "details", "pH", "temperature"])
 
 # One-hot encode resolution class
 encoder = OneHotEncoder(sparse_output=False)
